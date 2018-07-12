@@ -1,0 +1,31 @@
+<h1>Users</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Pic</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= image_tag post.avatar.tiny.url, class: 'img-circle' if post.avatar %></td>
+        <td><%= user.name %></td>
+        <td><%= user.avatar %></td>
+        <td><%= user.body %></td>
+        <td><%= @post.body %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', post %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', post %>
